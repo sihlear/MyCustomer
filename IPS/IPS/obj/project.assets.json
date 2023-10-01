@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\IPS\\IPS\\IPS.csproj",
+      "projectUniqueName": "C:\\Users\\SIHLE\\Source\\Repos\\sihlear\\MyCustomer\\IPS\\IPS\\IPS.csproj",
       "projectName": "IPS",
-      "projectPath": "C:\\Dev\\IPS\\IPS\\IPS.csproj",
+      "projectPath": "C:\\Users\\SIHLE\\Source\\Repos\\sihlear\\MyCustomer\\IPS\\IPS\\IPS.csproj",
       "packagesPath": "C:\\Users\\SIHLE\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\IPS\\IPS\\obj\\",
+      "outputPath": "C:\\Users\\SIHLE\\Source\\Repos\\sihlear\\MyCustomer\\IPS\\IPS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SIHLE\\AppData\\Roaming\\NuGet\\NuGet.Config",

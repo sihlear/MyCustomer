@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9bMLUQDfGp1LFUm1u6boW1TDvTfUBj1BpWQhkCxaRrp9HF1mnM4bDnFwgarIbeIoM3do62Y4YWauvkMPxEH7aQ==",
+  "dgSpecHash": "rpMKFZkZkyF0M1qo36hyYTnfIO/HzvUQ8jRvF2mWjYc5pyQm+Bcw05obdEMkqVRTACjE2dwuTRICbnAEeM/IKA==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\IPS\\IPS\\IPS.csproj",
+  "projectFilePath": "C:\\Users\\SIHLE\\Source\\Repos\\sihlear\\MyCustomer\\IPS\\IPS\\IPS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SIHLE\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\SIHLE\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
