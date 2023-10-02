@@ -1,11 +1,12 @@
 ﻿using IPS.Interfaces;
 using IPS.Models;
+using IPS.Repositories;
 
 namespace IPS.Service
 {
     public class CustomerService : ICustomerService
     {
-        public readonly ICustomerRepository _customerRepository;
+        public CustomerRepository _customerRepository;
 
         public Task AddProductAsync(Customer customer)
         {
@@ -16,12 +17,6 @@ namespace IPS.Service
         {
             throw new NotImplementedException();
         }
-
-        public Task<IEnumerable<Customer>> GetAllProductsAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<Customer> GetProductByIdAsync(int id)
         {
             throw new NotImplementedException();
@@ -30,6 +25,12 @@ namespace IPS.Service
         public Task UpdateProductAsync(Customer customer)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            _customerRepository = new CustomerRepository();
+            return _customerRepository.GetCustomers();
         }
     }
 }

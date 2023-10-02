@@ -1,6 +1,12 @@
-﻿namespace IPS.Interfaces
+﻿using IPS.Models;
+
+namespace IPS.Interfaces
 {
-    public class ICustomerRepository
+    public interface ICustomerRepository 
     {
+        List<Customer> GetCustomers();
+        void updateCustomer();
+        void deleteCustomer();
+        void addCustomer();
     }
 }

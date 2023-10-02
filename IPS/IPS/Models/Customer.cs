@@ -15,11 +15,9 @@ namespace IPS.Models
         [EmailAddress]
         [StringLength(40, MinimumLength = 2, ErrorMessage = "Please enter a Valid Email address")]
         public string Email { get; set; }
-        [Required]
-        public string Address { get; set; }
         [Phone]
         [Required]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
     }
 }

@@ -6,7 +6,7 @@ namespace IPS.Interfaces
 {
     public interface ICustomerService
     {
-        Task<IEnumerable<Customer>> GetAllProductsAsync();
+        List<Customer> GetAllCustomers();
         Task<Customer> GetProductByIdAsync(int id);
         Task AddProductAsync(Customer product);
         Task UpdateProductAsync(Customer product);
