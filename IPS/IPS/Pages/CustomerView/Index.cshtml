@@ -4,7 +4,7 @@
 }
 <br />
 <h2>List of Customers</h2>
-<a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Create">New Customer</a>
+<a class="btn btn-primary btn-sm" href="/CustomerView/AddCustomer">New Customer</a>
 <table class="table">
     <thead>
     <th>ID</th>
@@ -16,14 +16,14 @@
     <tbody>
         @foreach (var item in Model.customers)
         {
-               <tr>
+            <tr>
             <td>@item.CustomerId</td>
             <td>@item.CustomerName</td>
             <td>@item.Email</td>
             <td>@item.Phone</td>
             <td>
-            <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Create">Edit</a>
-            <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Create">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Edit?Id=@item.CustomerId">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Delete?Id=@item.CustomerId">Delete</a>
             </td>
             </tr>
         }

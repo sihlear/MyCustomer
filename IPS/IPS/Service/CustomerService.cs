@@ -8,9 +8,10 @@ namespace IPS.Service
     {
         public CustomerRepository _customerRepository;
 
-        public Task AddProductAsync(Customer customer)
+        public void CreateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerRepository = new CustomerRepository();
+            _customerRepository.CreateCustomer(customer);
         }
 
         public Task DeleteProductAsync(int id)

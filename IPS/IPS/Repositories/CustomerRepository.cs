@@ -1,4 +1,5 @@
-﻿using IPS.Interfaces;
+﻿using IPS.Database;
+using IPS.Interfaces;
 using IPS.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
@@ -9,7 +10,7 @@ namespace IPS.Repositories
     public class CustomerRepository : ICustomerRepository
 
     {
-        ILogger logger;
+        
         public void addCustomer()
         {
             throw new NotImplementedException();
@@ -26,7 +27,7 @@ namespace IPS.Repositories
 
             try
             {
-                string DbConnectionString = "server=ESEN\\SQLEXPRESS;database=TechSolutions;Integrated Security=True;";
+                string DbConnectionString = "server=ESEN\\SQLEXPRESS;database=TechSolutions;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
                 using (SqlConnection connection = new SqlConnection(DbConnectionString))
                 {
                     connection.Open();
@@ -62,6 +63,33 @@ namespace IPS.Repositories
         public void updateCustomer()
         {
             throw new NotImplementedException();
+        }
+
+        public void CreateCustomer(Customer customer)
+        {
+            try
+            {
+                string DbConnectionString = Constants.DbconnectionString;
+                using (SqlConnection connection = new SqlConnection(DbConnectionString))
+                {
+                    connection.Open();
+                    string query = Constants.InsertCustomer;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CustomerName",customer.CustomerName);
+                        command.Parameters.AddWithValue("@Email", customer.Email);
+                        command.Parameters.AddWithValue("@Phone", customer.Phone);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error adding new customer! " + e.ToString());
+            }
+
         }
     }
 }

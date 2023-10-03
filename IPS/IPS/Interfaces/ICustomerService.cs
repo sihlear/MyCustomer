@@ -8,7 +8,7 @@ namespace IPS.Interfaces
     {
         List<Customer> GetAllCustomers();
         Task<Customer> GetProductByIdAsync(int id);
-        Task AddProductAsync(Customer product);
+        void CreateCustomer(Customer customer);
         Task UpdateProductAsync(Customer product);
         Task DeleteProductAsync(int id);
     }
