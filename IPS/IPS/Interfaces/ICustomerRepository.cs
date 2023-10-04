@@ -5,8 +5,8 @@ namespace IPS.Interfaces
     public interface ICustomerRepository 
     {
         List<Customer> GetCustomers();
-        void updateCustomer();
-        void deleteCustomer();
-        void addCustomer();
+        void UpdateCustomer(Customer customer);
+        void DeleteCustomer(int id);
+        void CreateCustomer(Customer customer);
     }
 }

@@ -14,24 +14,27 @@ namespace IPS.Service
             _customerRepository.CreateCustomer(customer);
         }
 
-        public Task DeleteProductAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<Customer> GetProductByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateProductAsync(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Customer> GetAllCustomers()
         {
             _customerRepository = new CustomerRepository();
             return _customerRepository.GetCustomers();
+        }
+
+        public void UpdateCustomer(Customer customer)
+        {
+            _customerRepository = new CustomerRepository();
+            _customerRepository.UpdateCustomer(customer);
+        }
+
+        public Customer GetCustomerById(int id)
+        {
+            _customerRepository = new CustomerRepository();
+            return _customerRepository.GetCustomerById(id);
+        }
+        public void DeleteCustomer(int id) 
+        {
+            _customerRepository = new CustomerRepository();
+            _customerRepository.DeleteCustomer(id);
         }
     }
 }

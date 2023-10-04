@@ -2,9 +2,13 @@
 @model IPS.Pages.CustomerView.IndexModel
 @{
 }
+<head>
+    <link rel="stylesheet" href="~/css/site.css" /> .
+</head>
 <br />
-<h2>List of Customers</h2>
-<a class="btn btn-primary btn-sm" href="/CustomerView/AddCustomer">New Customer</a>
+<div class="modal-header"><h2>List of Customers</h2></div>
+ <div class="modal-dialog-centered">
+ <div class="modal-body">
 <table class="table">
     <thead>
     <th>ID</th>
@@ -22,10 +26,15 @@
             <td>@item.Email</td>
             <td>@item.Phone</td>
             <td>
-                    <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Edit?Id=@item.CustomerId">Edit</a>
-                    <a class="btn btn-primary btn-sm" href="..\Pages\CustomerView\Delete?Id=@item.CustomerId">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="/CustomerView/editCustomer?Id=@item.CustomerId">Edit</a>
+                    <a class="btn btn-outline-danger btn-sm" id="delete" href="/CustomerView/delete?Id=@item.CustomerId" >Delete</a>
             </td>
             </tr>
         }
-</tbody>
-</table>
+    </tbody>
+    
+        </table>
+    </div>
+    <div class="modal-static"><a class="btn btn-primary btn-sm" href="/CustomerView/AddCustomer">New Customer</a></div>
+
+ </div>

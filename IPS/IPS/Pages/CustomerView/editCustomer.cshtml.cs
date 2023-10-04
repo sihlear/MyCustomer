@@ -1,14 +1,14 @@
 using IPS.Database;
 using IPS.Models;
+using IPS.Repositories;
 using IPS.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.FileSystemGlobbing.Internal;
 using System.Text.RegularExpressions;
 
 namespace IPS.Pages.CustomerView
 {
-    public class AddCustomerModel : PageModel
+    public class editCustomerModel : PageModel
     {
         public Customer customer = new Customer();
         public string errorMessage = string.Empty;
@@ -16,22 +16,25 @@ namespace IPS.Pages.CustomerView
         private CustomerService _customerService;
         public void OnGet()
         {
-          
-        }
+            customer.CustomerId = Int32.Parse(Request.Query["Id"]);
+            _customerService = new CustomerService();
+            customer = _customerService.GetCustomerById(customer.CustomerId);
 
+        }
         public void OnPost() 
         {
-            
+            customer.CustomerId = Int32.Parse(Request.Query["Id"]);
             customer.CustomerName = Request.Form["name"];
             customer.Email = Request.Form["email"];
             customer.Phone = Request.Form["phone"];
 
 
-            if(string.IsNullOrEmpty(customer.CustomerName) || string.IsNullOrEmpty(customer.Email) || string.IsNullOrEmpty(customer.Phone))
+            if (string.IsNullOrEmpty(customer.CustomerName) || string.IsNullOrEmpty(customer.Email) || string.IsNullOrEmpty(customer.Phone))
             {
                 errorMessage = "one or more fields are missing entries";
                 return;
-            }else if(!validatePhone(customer.Phone)) { errorMessage = "Please enter a valid Phone number";return; }
+            }
+            else if (!validatePhone(customer.Phone)) { errorMessage = "Please enter a valid Phone number"; return; }
             else if (!isValidMail(customer.Email))
             {
                 errorMessage = "Invalid email address";
@@ -40,28 +43,31 @@ namespace IPS.Pages.CustomerView
 
             try
             {
-                CreatCustomer(customer);
-                succefulMessage = "User added succesfully";
+                updateCustomer(customer);
+                succefulMessage = "User details updated succesfully";
                 Response.Redirect("/CustomerView/Index");
 
             }
-            catch(Exception ex) { 
+            catch (Exception ex)
+            {
 
-                if(ex.Message.Contains(customer.Email)) errorMessage ="User with "+ customer.Email + " already exist" ;
+                if (ex.Message.Contains(customer.Email)) errorMessage = "User with " + customer.Email + " already exist";
                 return;
             }
+
         }
 
-        private void CreatCustomer(Customer customer)
+        private void updateCustomer(Customer customer)
         {
             _customerService = new CustomerService();
-            _customerService.CreateCustomer(customer);
-        }
+            _customerService.UpdateCustomer(customer);
+        } 
+
         private bool isValidMail(string email)
         {
             Regex regex = new Regex(Constants.emailPattern);
             Match match = regex.Match(email);
-            if (match.Success)  return true;
+            if (match.Success) return true;
             return false;
         }
 

@@ -7,9 +7,9 @@ namespace IPS.Interfaces
     public interface ICustomerService
     {
         List<Customer> GetAllCustomers();
-        Task<Customer> GetProductByIdAsync(int id);
+        Customer GetCustomerById(int id);
         void CreateCustomer(Customer customer);
-        Task UpdateProductAsync(Customer product);
-        Task DeleteProductAsync(int id);
+        void UpdateCustomer(Customer customer);
+        void DeleteCustomer(int id);
     }
 }

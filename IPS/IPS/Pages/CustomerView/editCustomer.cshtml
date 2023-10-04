@@ -1,9 +1,9 @@
 ﻿@page
-@model IPS.Pages.CustomerView.AddCustomerModel
+@model IPS.Pages.CustomerView.editCustomerModel
 @{
 }
 <br />
-<h2>Add New Customer</h2>
+<h2>Edit Customer</h2>
 @if (!string.IsNullOrEmpty(Model.errorMessage))
 {
     <div class="alert-dismissible alert alert-warning" role="alert">
@@ -11,13 +11,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close "></button>
     </div>
 }
-
 <form method="POST">
-
+    <input type="hidden" name="Id" value="@Model.customer.CustomerId"/>
     <div class="row mb-3">
         <label class="col-ms-3 col-form-label">Full Name</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="name" value="@Model.customer.CustomerName"/>
+            <input type="text" class="form-control" name="name" value="@Model.customer.CustomerName" />
 
         </div>
     </div>
@@ -36,13 +35,14 @@
         </div>
     </div>
     @if (!string.IsNullOrEmpty(Model.succefulMessage))
-{
-    <div class="alert-dismissible alert alert-warning" role="alert">
-        <strong>@Model.succefulMessage</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close "></button>
-    </div>
-}
-   <div class="row mb-3">
+    {
+        <div class="alert-dismissible alert alert-warning" role="alert">
+            <strong>@Model.succefulMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close "></button>
+        </div>
+    }
+
+    <div class="row mb-3">
         <div class="col-sm-3 d-sm-grid">
             <button class="btn btn-primary btn-sm" id="save">Submit</button>
 
@@ -52,12 +52,4 @@
 
         </div>
     </div>
-
 </form>
-<script>
-    $(document).ready(function(){
-    $('#cancel').click(function(){
-            window.location.href = "/CustomerView/";
-    });
-    }
-</script>

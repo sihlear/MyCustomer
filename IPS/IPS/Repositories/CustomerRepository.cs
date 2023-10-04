@@ -11,14 +11,20 @@ namespace IPS.Repositories
 
     {
         
-        public void addCustomer()
+        public void DeleteCustomer(int id)
         {
-            throw new NotImplementedException();
-        }
+            string DbConnectionString = Constants.DbconnectionString;
+            using (SqlConnection connection = new SqlConnection(DbConnectionString))
+            {
+                connection.Open();
+                string query = Constants.DeleteCustomer;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
 
-        public void deleteCustomer()
-        {
-            throw new NotImplementedException();
+            }
         }
 
         public List<Customer> GetCustomers()
@@ -59,16 +65,9 @@ namespace IPS.Repositories
 
             return customers;
         }
-
-        public void updateCustomer()
-        {
-            throw new NotImplementedException();
-        }
-
         public void CreateCustomer(Customer customer)
         {
-            try
-            {
+            
                 string DbConnectionString = Constants.DbconnectionString;
                 using (SqlConnection connection = new SqlConnection(DbConnectionString))
                 {
@@ -84,12 +83,61 @@ namespace IPS.Repositories
                     }
 
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error adding new customer! " + e.ToString());
-            }
+           
 
         }
+        public void UpdateCustomer(Customer customer)
+        {
+
+            string DbConnectionString = Constants.DbconnectionString;
+            using (SqlConnection connection = new SqlConnection(DbConnectionString))
+            {
+                connection.Open();
+                string query = Constants.UpdateCustomer;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", customer.CustomerId);
+                    command.Parameters.AddWithValue("@name", customer.CustomerName);
+                    command.Parameters.AddWithValue("@Email", customer.Email);
+                    command.Parameters.AddWithValue("@Phone", customer.Phone);
+
+                    command.ExecuteNonQuery();
+                }
+
+            }
+        }
+        public Customer GetCustomerById(int id)
+        {
+            Customer customer = new Customer();
+            string DbConnectionString = Constants.DbconnectionString;
+            using (SqlConnection connection = new SqlConnection(DbConnectionString))
+            {
+
+                connection.Open();
+                string query = Constants.GetCustomer;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    using (SqlDataReader sqlDataReader = command.ExecuteReader())
+                    {
+                        while (sqlDataReader.Read())
+                        {
+                           
+                            customer.CustomerId = sqlDataReader.GetInt32(0);
+                            customer.CustomerName = sqlDataReader.GetString(1);
+                            customer.Email = sqlDataReader.GetString(2);
+                            customer.Phone = sqlDataReader.GetString(3);
+
+                           
+                        }
+                    }
+                    return customer;
+
+                    
+                }
+
+            }
+        }
+
     }
 }
