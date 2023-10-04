@@ -1,3 +1,11 @@
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.csproj.AssemblyReference.cache
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.AssemblyInfoInputs.cache
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.AssemblyInfo.cs
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.csproj.CoreCompileInputs.cache
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.RazorAssemblyInfo.cache
+C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.RazorAssemblyInfo.cs
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\appsettings.json
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\IPS.staticwebassets.runtime.json
@@ -67,14 +75,6 @@ C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\runtimes
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.csproj.AssemblyReference.cache
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.AssemblyInfoInputs.cache
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.AssemblyInfo.cs
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.csproj.CoreCompileInputs.cache
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.RazorAssemblyInfo.cache
-C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\IPS.RazorAssemblyInfo.cs
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\staticwebassets\msbuild.IPS.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\staticwebassets\msbuild.build.IPS.props
 C:\Users\SIHLE\Source\Repos\sihlear\MyCustomer\IPS\IPS\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.IPS.props
