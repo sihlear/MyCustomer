@@ -1,0 +1,10 @@
+﻿@page
+@using System.Data.SqlClient;
+@using IPS.Service
+@{
+    CustomerService customerService = new CustomerService();
+    int customerId = int.Parse(Request.Query["Id"]);
+    customerService.DeleteCustomer(customerId);
+
+    Response.Redirect("/CustomerView");
+}

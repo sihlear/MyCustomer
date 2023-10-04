@@ -1,0 +1,55 @@
+﻿@page
+@model IPS.Pages.CustomerView.editCustomerModel
+@{
+}
+<br />
+<h2>Edit Customer</h2>
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <div class="alert-dismissible alert alert-warning" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close "></button>
+    </div>
+}
+<form method="POST">
+    <input type="hidden" name="Id" value="@Model.customer.CustomerId"/>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Full Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.customer.CustomerName" />
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.customer.Email" />
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-ms-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.customer.Phone" />
+
+        </div>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.succefulMessage))
+    {
+        <div class="alert-dismissible alert alert-warning" role="alert">
+            <strong>@Model.succefulMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close "></button>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="col-sm-3 d-sm-grid">
+            <button class="btn btn-primary btn-sm" id="save">Submit</button>
+
+        </div>
+        <div class="col-sm-3 d-sm-grid">
+            <button class="btn btn-primary btn-sm" id="cancel" href="/">Cancel</button>
+
+        </div>
+    </div>
+</form>

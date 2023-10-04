@@ -1,0 +1,40 @@
+﻿@page
+@model IPS.Pages.CustomerView.IndexModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" /> .
+</head>
+<br />
+<div class="modal-header"><h2>List of Customers</h2></div>
+ <div class="modal-dialog-centered">
+ <div class="modal-body">
+<table class="table">
+    <thead>
+    <th>ID</th>
+    <th>Customer Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.customers)
+        {
+            <tr>
+            <td>@item.CustomerId</td>
+            <td>@item.CustomerName</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>
+                    <a class="btn btn-primary btn-sm" href="/CustomerView/editCustomer?Id=@item.CustomerId">Edit</a>
+                    <a class="btn btn-outline-danger btn-sm" id="delete" href="/CustomerView/delete?Id=@item.CustomerId" >Delete</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+    
+        </table>
+    </div>
+    <div class="modal-static"><a class="btn btn-primary btn-sm" href="/CustomerView/AddCustomer">New Customer</a></div>
+
+ </div>
